@@ -1,0 +1,1 @@
+cmd_/home/refone/kmodule/crypto/refone.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/refone/kmodule/crypto/refone.ko /home/refone/kmodule/crypto/refone.o /home/refone/kmodule/crypto/refone.mod.o ;  true
