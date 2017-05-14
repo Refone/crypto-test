@@ -11,38 +11,50 @@ static const unsigned char KEY[] = {0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,
 static const unsigned char IV[] = {0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,
 									0x08,0x09,0x0a,0x0b,0x0c,0x0d,0x0e,0x0f};
 
-static AES_KEY key;
-static struct crypto_aes_ctx ctx;
-
-extern void AESENC_Key_Expansion(const unsigned char* userkey,
-								 AES_KEY* key_schedule);
+static struct crypto_aes_ctx _ctx;
+static struct crypto_aes_ctx *ctx = &_ctx;
 
 extern void AESENC_encrypt (const unsigned char *in,
 							unsigned char *out,
 							const unsigned char ivec[16],
 							unsigned long length,
-							AES_KEY *KS,
+							unsigned char *KS,
 							int nr);
 
 extern void AESENC_decrypt (const unsigned char *in,
 							unsigned char *out,
 							const unsigned char ivec[16],
 							unsigned long length,
-							AES_KEY *KS,
+							unsigned char *KS,
 							int nr);
 
 void aesenc_encrypt(void* src, void* dst, unsigned long length)
 {
 	AESENC_encrypt((unsigned char*)src, (unsigned char*)dst, 
-					IV, length, &key, 10);
+					IV, length, (unsigned char *)ctx->key_enc, 10);
 }
 
 void aesenc_decrypt(void* src, void* dst, unsigned long length)
 {
 	AESENC_decrypt((unsigned char*)src, (unsigned char*)dst,
-					IV, length, &key, 10);
+					IV, length, (unsigned char *)ctx->key_dec, 10);
 }
 
+void aes_encrypt(void* src, void* dst, unsigned long length)
+{
+	int i;
+	for (i=0; i<length/16; i++) {
+		crypto_aes_encrypt_x86(ctx, (u8 *)(dst+16*i), (u8 *)(src+16*i));
+	}
+}
+
+void aes_decrypt(void* src, void* dst, unsigned long length)
+{
+	int i;
+	for (i=0; i<length/16; i++) {
+		crypto_aes_decrypt_x86(ctx, (u8 *)(dst+16*i), (u8 *)(src+16*i));
+	}
+}
 
 void print_text(uint8_t* src, unsigned long length)
 {
@@ -80,21 +92,30 @@ static int init_crypto(void)
 
 	printk("crypto module init.\n");
 	
-	AESENC_Key_Expansion(KEY, &key);
-	crypto_aes_expand_key(&ctx, KEY, AES_KEYSIZE_128);
+	crypto_aes_expand_key(ctx, KEY, AES_KEYSIZE_128);
 
 /************* crypto_aes  *****************/
-	
+//	printk("TEST_PLAIN:\n");
+//	print_text(TEST_PLAIN, 64);
+//	aes_encrypt(TEST_PLAIN, VECTOR, 64);		
+//	printk("TEST_CIPHER:\n");
+//	print_text(VECTOR, 64);
+//	aes_decrypt(VECTOR, VECTOR, 64);
+//	printk("TEST_DECRYPT:\n");
+//	print_text(VECTOR, 64);
 /************ crypto_aes end ***************/
 
 /************* AESENC TEST *****************/
-//	printk("TEST_PLAIN:\n");
-//	print_text(TEST_PLAIN, 64);
-//	aesenc_encrypt(TEST_PLAIN, VECTOR, 64);
-//	printk("TEST_CIPHER:\n");
-//	print_text(VECTOR, 64);
-//	printk("CBC128_EXPECTED:\n");
-//	print_text(CBC128_EXPECTED, 64);
+	printk("TEST_PLAIN:\n");
+	print_text(TEST_PLAIN, 64);
+	aesenc_encrypt(TEST_PLAIN, VECTOR, 64);
+	printk("TEST_CIPHER:\n");
+	print_text(VECTOR, 64);
+	printk("CBC128_EXPECTED:\n");
+	print_text(CBC128_EXPECTED, 64);
+	aesenc_decrypt(VECTOR, VECTOR, 64);
+	printk("TEST_DECRYPT:\n");
+	print_text(VECTOR, 64);
 /************* AESENC TEST END *************/
 
 	return 0;
