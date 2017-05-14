@@ -779,7 +779,6 @@ deps_/home/refone/kmodule/crypto/crypto-test.o := \
   arch/x86/include/asm/uaccess_64.h \
   arch/x86/include/asm/crypto/aes.h \
   include/crypto/aes.h \
-  /home/refone/kmodule/crypto/crypto.h \
 
 /home/refone/kmodule/crypto/crypto-test.o: $(deps_/home/refone/kmodule/crypto/crypto-test.o)
 
