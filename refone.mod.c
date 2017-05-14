@@ -18,6 +18,7 @@ static const struct modversion_info ____versions[]
 __used
 __attribute__((section("__versions"))) = {
 	{ 0x84af0157, __VMLINUX_SYMBOL_STR(module_layout) },
+	{ 0x24aac4d9, __VMLINUX_SYMBOL_STR(crypto_aes_expand_key) },
 	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
 	{ 0xbdfb6dbb, __VMLINUX_SYMBOL_STR(__fentry__) },
 };
