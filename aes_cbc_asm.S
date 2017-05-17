@@ -3,87 +3,17 @@
 .text
 .align	16,0x90
 
-
-//void AESENC_Key_Expansion(const unsigned char* userkey,
-//							unsigned char* key_schedule);
-//ENTRY(AESENC_Key_Expansion)
-.global AESENC_Key_Expansion
-.align 4,0x90
-AESENC_Key_Expansion:
-	# parameter 1: %rdi
-	# parameter 2: %rsi
-
-	movl	$10, 240(%rsi)
-	movdqu	(%rdi), %xmm1
-	movdqa	%xmm1, (%rsi)
-
-ASSISTS:
-	aeskeygenassist $1, %xmm1, %xmm2
-	call PREPARE_ROUNDKEY_128
-	movdqa %xmm1, 16(%rsi)
-	
-	aeskeygenassist $2, %xmm1, %xmm2
-	call PREPARE_ROUNDKEY_128
-	movdqa %xmm1, 32(%rsi)
-	
-	aeskeygenassist $4, %xmm1, %xmm2
-	call PREPARE_ROUNDKEY_128
-	movdqa %xmm1, 48(%rsi)
-	
-	aeskeygenassist $8, %xmm1, %xmm2
-	call PREPARE_ROUNDKEY_128
-	movdqa %xmm1, 64(%rsi)
-	
-	aeskeygenassist $16, %xmm1, %xmm2
-	call PREPARE_ROUNDKEY_128
-	movdqa %xmm1, 80(%rsi)
-	
-	aeskeygenassist $32, %xmm1, %xmm2
-	call PREPARE_ROUNDKEY_128
-	movdqa %xmm1, 96(%rsi)
-	
-	aeskeygenassist $64, %xmm1, %xmm2
-	call PREPARE_ROUNDKEY_128
-	movdqa %xmm1, 112(%rsi)
-	
-	aeskeygenassist $0x80, %xmm1, %xmm2
-	call PREPARE_ROUNDKEY_128
-	movdqa %xmm1, 128(%rsi)
-	
-	aeskeygenassist $0x1b, %xmm1, %xmm2
-	call PREPARE_ROUNDKEY_128
-	movdqa %xmm1, 144(%rsi)
-	
-	aeskeygenassist $0x36, %xmm1, %xmm2
-	call PREPARE_ROUNDKEY_128
-	movdqa %xmm1, 160(%rsi)
-	ret
-
-PREPARE_ROUNDKEY_128:
-	pshufd	$255, %xmm2, %xmm2
-	movdqa	%xmm1, %xmm3
-	pslldq	$4, %xmm3
-	pxor	%xmm3, %xmm1
-	pslldq	$4, %xmm3
-	pxor	%xmm3, %xmm1
-	pslldq	$4, %xmm3
-	pxor	%xmm3, %xmm1
-	pxor	%xmm2, %xmm1
-	ret
-//ENDPROC(AESENC_Key_Expansion)
-.size AESENC_Key_Expansion, .-AESENC_Key_Expansion
-
-//	AESENC_encrypt (const unsigned char *in,
+//	AES_CBC_encrypt (const unsigned char *in,
 //					 unsigned char *out,
 //					 unsigned char ivec[16],
 //					 unsigned long length,
 //					 const unsigned char *KS,
 //					 int nr)
 
-//ENTRY(AESENC_encrypt)
-.global AESENC_encrypt
+//ENTRY(AES_CBC_encrypt)
+.global AES_CBC_encrypt
 .align 4,0x90
-AESENC_encrypt:
+AES_CBC_encrypt:
 	# parameter 1: %rdi
 	# parameter 2: %rsi
 	# parameter 3: %rdx
@@ -133,20 +63,20 @@ LAST:
 	jne	LOOP
 	ret
 
-//ENDPROC(AESENC_encrypt)
-.size AESENC_encrypt, .-AESENC_encrypt
+//ENDPROC(AES_CBC_encrypt)
+.size AES_CBC_encrypt, .-AES_CBC_encrypt
 
-//	AESENC_decrypt (const unsigned char *in,
+//	AES_CBC_decrypt (const unsigned char *in,
 //					 unsigned char *out,
 //					 unsigned char ivec[16],
 //					 unsigned long length,
 //					 const unsigned char *KS,
 //					 int nr)
 
-//ENTRY(AESENC_decrypt)
-.global AESENC_decrypt
+//ENTRY(AES_CBC_decrypt)
+.global AES_CBC_decrypt
 .align 4,0x90
-AESENC_decrypt:
+AES_CBC_decrypt:
 	# parameter 1: %rdi
 	# parameter 2: %rsi
 	# parameter 3: %rdx
@@ -317,5 +247,5 @@ DLAST_4_2:
 
 DEND_4:
 	ret
-//ENDPROC(AESENC_decrypt)
-.size AESENC_decrypt, .-AESENC_decrypt
+//ENDPROC(AES_CBC_decrypt)
+.size AES_CBC_decrypt, .-AES_CBC_decrypt

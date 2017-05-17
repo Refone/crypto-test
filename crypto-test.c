@@ -19,14 +19,14 @@ static const unsigned char IV[] = {0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,
 static struct crypto_aes_ctx _ctx;
 static struct crypto_aes_ctx *ctx = &_ctx;
 
-extern void AESENC_encrypt (const unsigned char *in,
+extern void AES_CBC_encrypt (const unsigned char *in,
 							unsigned char *out,
 							const unsigned char ivec[16],
 							unsigned long length,
 							unsigned char *KS,
 							int nr);
 
-extern void AESENC_decrypt (const unsigned char *in,
+extern void AES_CBC_decrypt (const unsigned char *in,
 							unsigned char *out,
 							const unsigned char ivec[16],
 							unsigned long length,
@@ -35,13 +35,13 @@ extern void AESENC_decrypt (const unsigned char *in,
 
 void aesenc_encrypt(void* src, void* dst, unsigned long length)
 {
-	AESENC_encrypt((unsigned char*)src, (unsigned char*)dst, 
+	AES_CBC_encrypt((unsigned char*)src, (unsigned char*)dst, 
 					IV, length, (unsigned char *)ctx->key_enc, 10);
 }
 
 void aesenc_decrypt(void* src, void* dst, unsigned long length)
 {
-	AESENC_decrypt((unsigned char*)src, (unsigned char*)dst,
+	AES_CBC_decrypt((unsigned char*)src, (unsigned char*)dst,
 					IV, length, (unsigned char *)ctx->key_dec, 10);
 }
 
