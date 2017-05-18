@@ -1,0 +1,183 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AES_CBC_decrypt	aes_cbc_asm.S	/^AES_CBC_decrypt:$/;"	l
+AES_CBC_encrypt	aes_cbc_asm.S	/^AES_CBC_encrypt:$/;"	l
+AES_CTR_encrypt	aes_ctr_asm.S	/^AES_CTR_encrypt:$/;"	l
+AES_KEY	crypto.h	/^}AES_KEY;$/;"	t	typeref:struct:KEY_SCHEDULE
+AES_METHOD_CTR	crypto-test.c	8;"	d	file:
+ALIGN16	crypto.h	3;"	d
+ALIGN16	crypto.h	5;"	d
+ALL_F	aesni-intel_asm.S	/^ALL_F:      .octa 0xffffffffffffffffffffffffffffffff$/;"	l
+AREG	aesni-intel_asm.S	/^#define AREG	%eax$/;"	d
+AREG	aesni-intel_asm.S	/^#define AREG	%rax$/;"	d
+BSWAP_EPI_64	aes_ctr_asm.S	/^BSWAP_EPI_64:$/;"	l
+BSWAP_MASK	aesni-intel_asm.S	/^#define BSWAP_MASK %xmm10$/;"	d
+CTR	aesni-intel_asm.S	/^#define CTR	%xmm11$/;"	d
+DEND_4	aes_cbc_asm.S	/^DEND_4:$/;"	l
+DLAST_4	aes_cbc_asm.S	/^DLAST_4:$/;"	l
+DLAST_4_2	aes_cbc_asm.S	/^DLAST_4_2:$/;"	l
+DLOOP_4	aes_cbc_asm.S	/^DLOOP_4:$/;"	l
+DLOOP_4_2	aes_cbc_asm.S	/^DLOOP_4_2:$/;"	l
+DNO_PARTS_4	aes_cbc_asm.S	/^DNO_PARTS_4:$/;"	l
+DREMAINDER_4	aes_cbc_asm.S	/^DREMAINDER_4:$/;"	l
+EIGHT	aes_ctr_asm.S	/^EIGHT:$/;"	l
+END_4	aes_ctr_asm.S	/^END_4:$/;"	l
+FOUR	aes_ctr_asm.S	/^FOUR:$/;"	l
+F_MIN_MASK	aesni-intel_asm.S	/^F_MIN_MASK: .octa 0xf1f2f3f4f5f6f7f8f9fafbfcfdfeff0$/;"	l
+GF128MUL_MASK	aesni-intel_asm.S	/^#define GF128MUL_MASK %xmm10$/;"	d
+HashKey	aesni-intel_asm.S	/^#define	HashKey		16*0	\/\/ store HashKey <<1 mod poly here$/;"	d
+HashKey_2	aesni-intel_asm.S	/^#define	HashKey_2	16*1	\/\/ store HashKey^2 <<1 mod poly here$/;"	d
+HashKey_2_k	aesni-intel_asm.S	/^#define	HashKey_2_k	16*5	\/\/ store XOR of High 64 bits and Low 64$/;"	d
+HashKey_3	aesni-intel_asm.S	/^#define	HashKey_3	16*2	\/\/ store HashKey^3 <<1 mod poly here$/;"	d
+HashKey_3_k	aesni-intel_asm.S	/^#define	HashKey_3_k	16*6	\/\/ store XOR of High 64 bits and Low 64$/;"	d
+HashKey_4	aesni-intel_asm.S	/^#define	HashKey_4	16*3	\/\/ store HashKey^4 <<1 mod poly here$/;"	d
+HashKey_4_k	aesni-intel_asm.S	/^#define	HashKey_4_k	16*7	\/\/ store XOR of High 64 bits and Low 64$/;"	d
+HashKey_k	aesni-intel_asm.S	/^#define	HashKey_k	16*4	\/\/ store XOR of High 64 bits and Low 64$/;"	d
+IN	aesni-intel_asm.S	/^#define IN	IN1$/;"	d
+IN1	aesni-intel_asm.S	/^#define IN1	%xmm1$/;"	d
+IN2	aesni-intel_asm.S	/^#define IN2	%xmm7$/;"	d
+IN3	aesni-intel_asm.S	/^#define IN3	%xmm8$/;"	d
+IN4	aesni-intel_asm.S	/^#define IN4	%xmm9$/;"	d
+INC	aesni-intel_asm.S	/^#define INC	%xmm12$/;"	d
+INP	aesni-intel_asm.S	/^#define INP	%edx$/;"	d
+INP	aesni-intel_asm.S	/^#define INP	%rdx$/;"	d
+IN_LAST_4	aes_ctr_asm.S	/^IN_LAST_4:$/;"	l
+IN_LOOP_4	aes_ctr_asm.S	/^IN_LOOP_4:$/;"	l
+IV	aesni-intel_asm.S	/^#define IV	%xmm3$/;"	d
+IV	crypto-test.c	/^static const unsigned char IV[] = {0xC0,0x54,0x3B,0x59,0xDA,0x48,0xD9,0x0B};$/;"	v	file:
+IVP	aesni-intel_asm.S	/^#define IVP	%ebp$/;"	d
+IVP	aesni-intel_asm.S	/^#define IVP	%r8$/;"	d
+KEY	aesni-intel_asm.S	/^#define KEY	%xmm2$/;"	d
+KEY	crypto-test.c	/^static const unsigned char KEY[] = {0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,$/;"	v	file:
+KEY	crypto.h	/^	ALIGN16 unsigned char KEY[16*15];$/;"	m	struct:KEY_SCHEDULE
+KEYP	aesni-intel_asm.S	/^#define KEYP	%edi$/;"	d
+KEYP	aesni-intel_asm.S	/^#define KEYP	%rdi$/;"	d
+KEY_SCHEDULE	crypto.h	/^typedef struct KEY_SCHEDULE{$/;"	s
+KLEN	aesni-intel_asm.S	/^#define KLEN	%ebx$/;"	d
+KLEN	aesni-intel_asm.S	/^#define KLEN	%r9d$/;"	d
+LAST	aes_cbc_asm.S	/^LAST:$/;"	l
+LAST_4	aes_ctr_asm.S	/^LAST_4:$/;"	l
+LEN	aesni-intel_asm.S	/^#define LEN	%esi$/;"	d
+LEN	aesni-intel_asm.S	/^#define LEN	%rcx$/;"	d
+LOAD_HIGH_BROADCAST_AND_BSWAP	aes_ctr_asm.S	/^LOAD_HIGH_BROADCAST_AND_BSWAP:$/;"	l
+LOOP	aes_cbc_asm.S	/^LOOP:$/;"	l
+LOOP_4	aes_ctr_asm.S	/^LOOP_4:$/;"	l
+MASK1	aesni-intel_asm.S	/^MASK1:      .octa 0x0000000000000000ffffffffffffffff$/;"	l
+MASK2	aesni-intel_asm.S	/^MASK2:      .octa 0xffffffffffffffff0000000000000000$/;"	l
+MOVADQ	aesni-intel_asm.S	/^#define MOVADQ	movaps$/;"	d
+MOVUDQ	aesni-intel_asm.S	/^#define MOVUDQ	movups$/;"	d
+NONCE	crypto-test.c	/^static const unsigned char NONCE[] = {0x00,0x6C,0xB6,0xDB};$/;"	v	file:
+NO_PARTS	aes_cbc_asm.S	/^NO_PARTS:$/;"	l
+NO_PARTS_4	aes_ctr_asm.S	/^NO_PARTS_4:$/;"	l
+ONE	aes_ctr_asm.S	/^ONE:$/;"	l
+ONE	aesni-intel_asm.S	/^ONE:        .octa 0x00000000000000000000000000000001$/;"	l
+OUTP	aesni-intel_asm.S	/^#define OUTP	%rsi$/;"	d
+OUTP	aesni-intel_asm.S	/^#define OUTP	AREG$/;"	d
+PAGE_LEN	crypto-test.c	7;"	d	file:
+POLY	aesni-intel_asm.S	/^POLY:   .octa 0xC2000000000000000000000000000001$/;"	l
+REMAINDER_4	aes_ctr_asm.S	/^REMAINDER_4:$/;"	l
+SHIFT_MASK	aesni-intel_asm.S	/^SHIFT_MASK: .octa 0x0f0e0d0c0b0a09080706050403020100$/;"	l
+SHUF_MASK	aesni-intel_asm.S	/^SHUF_MASK:  .octa 0x000102030405060708090A0B0C0D0E0F$/;"	l
+STACK_OFFSET	aesni-intel_asm.S	/^#define	STACK_OFFSET    8*3$/;"	d
+STATE	aesni-intel_asm.S	/^#define STATE	STATE1$/;"	d
+STATE1	aesni-intel_asm.S	/^#define STATE1	%xmm0$/;"	d
+STATE2	aesni-intel_asm.S	/^#define STATE2	%xmm4$/;"	d
+STATE3	aesni-intel_asm.S	/^#define STATE3	%xmm5$/;"	d
+STATE4	aesni-intel_asm.S	/^#define STATE4	%xmm6$/;"	d
+T1	aesni-intel_asm.S	/^#define T1	%ecx$/;"	d
+T1	aesni-intel_asm.S	/^#define T1	%r10$/;"	d
+T2	aesni-intel_asm.S	/^#define T2	%r11$/;"	d
+TCTR_LOW	aesni-intel_asm.S	/^#define TCTR_LOW T2$/;"	d
+TKEYP	aesni-intel_asm.S	/^#define TKEYP	T1$/;"	d
+TMP6	aesni-intel_asm.S	/^TMP6 XMM0 XMM1 XMM2 XMM3 XMM4 XMM5 XMM6 XMM7 XMM8 operation$/;"	l
+TMP7	aesni-intel_asm.S	/^TMP7 XMM1 XMM2 XMM3 XMM4 XMMDst$/;"	l
+TWOONE	aesni-intel_asm.S	/^TWOONE: .octa 0x00000001000000000000000000000001$/;"	l
+TWO_N_ONE	aes_ctr_asm.S	/^TWO_N_ONE:$/;"	l
+TWO_N_TWO	aes_ctr_asm.S	/^TWO_N_TWO:$/;"	l
+UKEYP	aesni-intel_asm.S	/^#define UKEYP	OUTP$/;"	d
+VARIABLE_OFFSET	aesni-intel_asm.S	/^#define	VARIABLE_OFFSET	16*8$/;"	d
+XMM2	aesni-intel_asm.S	/^XMM2 XMM3 XMM4 XMMDst TMP6 TMP7 i i_seq operation$/;"	l
+ZERO	aesni-intel_asm.S	/^ZERO:       .octa 0x00000000000000000000000000000000$/;"	l
+_T_12_decrypt	aesni-intel_asm.S	/^_T_12_decrypt:$/;"	l
+_T_12_encrypt	aesni-intel_asm.S	/^_T_12_encrypt:$/;"	l
+_T_16_decrypt	aesni-intel_asm.S	/^_T_16_decrypt:$/;"	l
+_T_16_encrypt	aesni-intel_asm.S	/^_T_16_encrypt:$/;"	l
+_T_8_decrypt	aesni-intel_asm.S	/^_T_8_decrypt:$/;"	l
+_T_8_encrypt	aesni-intel_asm.S	/^_T_8_encrypt:$/;"	l
+__this_module	refone.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__this_module	refone2.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__used	refone.mod.c	/^__used$/;"	v	file:
+__used	refone.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+__used	refone2.mod.c	/^__used$/;"	v	file:
+__used	refone2.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+_aesni_dec1	aesni-intel_asm.S	/^_aesni_dec1:$/;"	l
+_aesni_dec4	aesni-intel_asm.S	/^_aesni_dec4:$/;"	l
+_aesni_enc1	aesni-intel_asm.S	/^_aesni_enc1:$/;"	l
+_aesni_enc4	aesni-intel_asm.S	/^_aesni_enc4:$/;"	l
+_aesni_gf128mul_x_ble	aesni-intel_asm.S	/^#define _aesni_gf128mul_x_ble() \\$/;"	d
+_aesni_inc	aesni-intel_asm.S	/^_aesni_inc:$/;"	l
+_aesni_inc_init	aesni-intel_asm.S	/^_aesni_inc_init:$/;"	l
+_ctx	crypto-test.c	/^static struct crypto_aes_ctx _ctx;$/;"	v	typeref:struct:crypto_aes_ctx	file:
+_decrypt_by_4	aesni-intel_asm.S	/^_decrypt_by_4:$/;"	l
+_encrypt_by_4_encrypt	aesni-intel_asm.S	/^_encrypt_by_4_encrypt:$/;"	l
+_four_cipher_left_decrypt	aesni-intel_asm.S	/^_four_cipher_left_decrypt:$/;"	l
+_four_cipher_left_encrypt	aesni-intel_asm.S	/^_four_cipher_left_encrypt:$/;"	l
+_initial_blocks_decrypted	aesni-intel_asm.S	/^_initial_blocks_decrypted:$/;"	l
+_initial_blocks_encrypted	aesni-intel_asm.S	/^_initial_blocks_encrypted:$/;"	l
+_initial_num_blocks_is_0_decrypt	aesni-intel_asm.S	/^_initial_num_blocks_is_0_decrypt:$/;"	l
+_initial_num_blocks_is_0_encrypt	aesni-intel_asm.S	/^_initial_num_blocks_is_0_encrypt:$/;"	l
+_initial_num_blocks_is_1_decrypt	aesni-intel_asm.S	/^_initial_num_blocks_is_1_decrypt:$/;"	l
+_initial_num_blocks_is_1_encrypt	aesni-intel_asm.S	/^_initial_num_blocks_is_1_encrypt:$/;"	l
+_initial_num_blocks_is_2_decrypt	aesni-intel_asm.S	/^_initial_num_blocks_is_2_decrypt:$/;"	l
+_initial_num_blocks_is_2_encrypt	aesni-intel_asm.S	/^_initial_num_blocks_is_2_encrypt:$/;"	l
+_initial_num_blocks_is_3_decrypt	aesni-intel_asm.S	/^_initial_num_blocks_is_3_decrypt:$/;"	l
+_initial_num_blocks_is_3_encrypt	aesni-intel_asm.S	/^_initial_num_blocks_is_3_encrypt:$/;"	l
+_key_expansion_128	aesni-intel_asm.S	/^_key_expansion_128:$/;"	l
+_key_expansion_192a	aesni-intel_asm.S	/^_key_expansion_192a:$/;"	l
+_key_expansion_192b	aesni-intel_asm.S	/^_key_expansion_192b:$/;"	l
+_key_expansion_256a	aesni-intel_asm.S	/^_key_expansion_256a:$/;"	l
+_key_expansion_256b	aesni-intel_asm.S	/^_key_expansion_256b:$/;"	l
+_less_than_8_bytes_left_decrypt	aesni-intel_asm.S	/^_less_than_8_bytes_left_decrypt:$/;"	l
+_less_than_8_bytes_left_encrypt	aesni-intel_asm.S	/^_less_than_8_bytes_left_encrypt:$/;"	l
+_multiple_of_16_bytes_decrypt	aesni-intel_asm.S	/^_multiple_of_16_bytes_decrypt:$/;"	l
+_multiple_of_16_bytes_encrypt	aesni-intel_asm.S	/^_multiple_of_16_bytes_encrypt:$/;"	l
+_return_T_decrypt	aesni-intel_asm.S	/^_return_T_decrypt:$/;"	l
+_return_T_done_decrypt	aesni-intel_asm.S	/^_return_T_done_decrypt:$/;"	l
+_return_T_done_encrypt	aesni-intel_asm.S	/^_return_T_done_encrypt:$/;"	l
+_return_T_encrypt	aesni-intel_asm.S	/^_return_T_encrypt:$/;"	l
+_zero_cipher_left_decrypt	aesni-intel_asm.S	/^_zero_cipher_left_decrypt:$/;"	l
+_zero_cipher_left_encrypt	aesni-intel_asm.S	/^_zero_cipher_left_encrypt:$/;"	l
+aes_decrypt	crypto-test.c	/^void aes_decrypt(void* src, void* dst, unsigned long length)$/;"	f
+aes_encrypt	crypto-test.c	/^void aes_encrypt(void* src, void* dst, unsigned long length)$/;"	f
+aes_loop_par_dec	aesni-intel_asm.S	/^aes_loop_par_dec:$/;"	l
+aes_loop_par_dec_done	aesni-intel_asm.S	/^aes_loop_par_dec_done:$/;"	l
+aes_loop_par_enc	aesni-intel_asm.S	/^aes_loop_par_enc:$/;"	l
+aes_loop_par_enc_done	aesni-intel_asm.S	/^aes_loop_par_enc_done:$/;"	l
+aesenc_decrypt	crypto-test.c	/^void aesenc_decrypt(void* src, void* dst, unsigned long length)$/;"	f
+aesenc_encrypt	crypto-test.c	/^void aesenc_encrypt(void* src, void* dst, unsigned long length)$/;"	f
+arg1	aesni-intel_asm.S	/^#define arg1 rdi$/;"	d
+arg10	aesni-intel_asm.S	/^#define arg10 STACK_OFFSET+32(%r14)$/;"	d
+arg2	aesni-intel_asm.S	/^#define arg2 rsi$/;"	d
+arg3	aesni-intel_asm.S	/^#define arg3 rdx$/;"	d
+arg4	aesni-intel_asm.S	/^#define arg4 rcx$/;"	d
+arg5	aesni-intel_asm.S	/^#define arg5 r8$/;"	d
+arg6	aesni-intel_asm.S	/^#define arg6 r9$/;"	d
+arg7	aesni-intel_asm.S	/^#define arg7 STACK_OFFSET+8(%r14)$/;"	d
+arg8	aesni-intel_asm.S	/^#define arg8 STACK_OFFSET+16(%r14)$/;"	d
+arg9	aesni-intel_asm.S	/^#define arg9 STACK_OFFSET+24(%r14)$/;"	d
+ctx	crypto-test.c	/^static struct crypto_aes_ctx *ctx = &_ctx;$/;"	v	typeref:struct:crypto_aes_ctx	file:
+dec	aesni-intel_asm.S	/^dec:        .octa 0x1$/;"	l
+enc	aesni-intel_asm.S	/^enc:        .octa 0x2$/;"	l
+exit_crypto	crypto-test.c	/^module_exit(exit_crypto);$/;"	v
+exit_crypto	crypto-test.c	/^static void exit_crypto(void)$/;"	f	file:
+init_crypto	crypto-test.c	/^module_init(init_crypto);$/;"	v
+init_crypto	crypto-test.c	/^static int init_crypto(void)$/;"	f	file:
+keysize	aesni-intel_asm.S	/^#define keysize 2*15*16(%arg1)$/;"	d
+nr	crypto.h	/^	unsigned int nr;$/;"	m	struct:KEY_SCHEDULE
+print_text	crypto-test.c	/^void print_text(uint8_t* src, unsigned long length)$/;"	f
+refone2-objs	Makefile	/^refone2-objs := crypto-test.o aes_cbc_asm.o aes_ctr_asm.o aesni-intel_asm.o $/;"	m
+u8	crypto-test.c	/^typedef unsigned char u8;$/;"	t	file:
